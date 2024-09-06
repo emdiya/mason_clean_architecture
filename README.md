@@ -9,18 +9,20 @@
 1: Install brick globally on machine :
 
 ```terminal
-    mason add -g feature --git-url https://github.com/umkithya/mason_with_responsive --git-path bricks/feature
+    mason add -g feature --git-url https://github.com/emdiya/mason_clean_architecture --git-path bricks/feature
 ```
+
 2: How to use :
 
 ```terminal
     mason make feature
 ```
+
 Note*: How to reinstall :
 
 ```terminal
    mason remove -g feature
-   mason add -g feature --git-url https://github.com/umkithya/mason_with_responsive --git-path bricks/feature   
+   mason add -g feature --git-url https://github.com/emdiya/mason_clean_architecture --git-path bricks/feature   
 ```
 
 Enter your feature name
