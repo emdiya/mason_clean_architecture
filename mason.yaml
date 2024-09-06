@@ -1,6 +1,5 @@
 bricks:
- 
-  feature:
-    path: bricks/feature
+  features:
+    path: bricks/features
 
   
