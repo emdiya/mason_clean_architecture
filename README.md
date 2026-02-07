@@ -1,165 +1,117 @@
-## Mason Template with Clean Architecture Getx Statemanagement
+# Mason Clean Architecture (GetX)
 
-`Noted:` Make sure you have Dart & Mason installed in your machine
-Open terminal
+A Mason brick template to scaffold a Flutter feature module using Clean Architecture and GetX.
 
-```base
-    dart pub global activate mason_cli
-```
+## Prerequisites
 
-Add Mason CLI to Environment Variables:
+- Flutter SDK installed
+- Dart SDK installed
+- Mason CLI installed
 
-1. **Add Mason CLI to Environment Variables**:
-
-    - Open the Start Menu and search for "Environment Variables."
-    - Select "Edit the system environment variables."
-    - Click on the "Environment Variables" button.
-    - Under "System variables," find the `Path` variable and click "Edit."
-    - Click "New" and add the path to the directory where Dart and Mason CLI are installed, typically:
-
-      ```plaintext
-      C:\Users\<Your_Username>\AppData\Local\Pub\Cache\bin
-      ```
-
-    - Click "OK" to close all dialog boxes.
-
-2. **Verify Installation**:
-
-    Open a new terminal and run:
-
-    ```bash
-    mason
-    ```
-
-    This should show the Mason CLI help if it’s correctly configured.
-
-### macOS and Linux
-
-1. **Add Mason CLI to Environment Variables**:
-
-    Open your terminal and run:
-
-    ```bash
-    echo 'export PATH="$PATH":"$HOME/.pub-cache/bin"' >> ~/.bashrc
-    source ~/.bashrc
-    ```
-
-    If you are using `zsh`, replace `~/.bashrc` with `~/.zshrc`.
-
-2. **Verify Installation**:
-
-    Run the following command in your terminal:
-
-    ```bash
-    mason
-    ```
-
-    This should display the Mason CLI help if it’s set up correctly.
-
-1: Install brick globally on machine :
-
-#### Clone the Project on window
-
-Open Terminal
+Install Mason CLI:
 
 ```bash
-git clone https://github.com/emdiya/mason_clean_architecture C:/Users/<Your_Username>/AppData/Local/Mason/Cache/git/mason_clean_architecture
+dart pub global activate mason_cli
 ```
 
-> Note: Make sure to replace YOUR_USERNAME machine with your actual username.
+Make sure Mason is in your PATH.
 
----
-
-### Clone the Project on macOS
-
-Open your terminal and run:
+- macOS/Linux (`zsh`):
 
 ```bash
-git clone https://github.com/emdiya/mason_clean_architecture ~/Library/Mason/Cache/git/mason_clean_architecture
+echo 'export PATH="$PATH:$HOME/.pub-cache/bin"' >> ~/.zshrc
+source ~/.zshrc
 ```
 
-This command clones the repository to the specified directory in your local machine.
+- Windows (PowerShell): add this folder to your `Path` environment variable:
 
----
-
-#### Add Mason features
-
-Add Mason into machine follow bellow command:
-
-```terminal
-    mason add -g features --git-url https://github.com/emdiya/mason_clean_architecture --git-path bricks/features
+```text
+C:\Users\<Your_Username>\AppData\Local\Pub\Cache\bin
 ```
 
-> "If you see ✓ Added features, it means you have successfully added them.
+Verify installation:
 
-# How to install in new project ?
-
-Create a New Flutter Project
-
+```bash
+mason --version
 ```
+
+## Use This Brick in Any Project
+
+### 1) Create/open a Flutter project
+
+```bash
 flutter create my_new_project
 cd my_new_project
 ```
 
-Activate Mason CLI:
+### 2) Initialize Mason
 
-```
-dart pub global activate mason_cli
-```
-
-Add Mason to Your Project:
->Add Mason as a dependency in your pubspec.yaml file. Open pubspec.yaml and add:
-
-```
-dependencies:
-  mason: ^0.1.0
-```
-
-Check lastest version in [pub.dev](https://pub.dev/packages/mason)
-
-Install Dependencies:
-
-```
-flutter pub get
-```
-
-Initialize Mason: Initialize Mason in your project directory:
-
-```
+```bash
 mason init
 ```
 
-Add Bricks: Add the desired brick (in your case, "features") to your Mason configuration. Here is how you can add a brick from a Git repository:
+### 3) Add this brick (run in your Flutter project root)
 
-```
+```bash
 mason add features --git-url https://github.com/emdiya/mason_clean_architecture --git-path bricks/features
 ```
 
-2: How to use :
-Generate Features: Once the brick is added, you can generate the features:
+### 4) Generate a feature
 
-```terminal
-    mason make features
+```bash
+mason make features
 ```
 
-Enter your feature name
+Example prompt:
 
-```terminal
-    ? What is your module name? (Main): home
+```text
+? What is your module name? (Main): home
 ```
 
-`Noted:` How to reinstall :
+Generated files will be created under:
 
-```terminal
-   mason remove -g features
-   mason add -g feature --git-url https://github.com/emdiya/mason_clean_architecture --git-path bricks/features
+```text
+lib/features/<feature_name>/
 ```
 
-Here’s a more polished and standard version:
+## Install Globally (Optional)
 
----
+If you want to use the brick across projects without re-adding each time:
 
-**Prepared by DiYA**  
-For more, visit [DiYA on GitHub](https://github.com/emdiya) or follow [DiYA on Medium](https://medium.com/@emdiya).
+```bash
+mason add -g features --git-url https://github.com/emdiya/mason_clean_architecture.git --git-path bricks/features
+```
 
----
+Then in any project:
+
+```bash
+mason make features
+```
+
+## Update or Reinstall
+
+```bash
+mason remove -g features
+mason add -g features --git-url https://github.com/emdiya/mason_clean_architecture.git --git-path bricks/features
+```
+
+## Local Development
+
+This repository includes a `mason.yaml` configured for the `features` brick:
+
+```yaml
+bricks:
+  features:
+    git:
+      url: "https://github.com/emdiya/mason_clean_architecture.git"
+      path: bricks/features
+```
+
+You can run `mason get` to pull the configured brick.
+
+## Author
+
+Prepared by DiYA:
+
+- GitHub: https://github.com/emdiya
+- Medium: https://medium.com/@emdiya

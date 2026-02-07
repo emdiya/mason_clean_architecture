@@ -1,7 +1,1 @@
-{
-    "bricks": {
-        "features": {
-            "path": "/Users/Kalidy/App/mason/bricks/features"
-        }
-    }
-}
+{"bricks":{"features":{"git":{"url":"https://github.com/emdiya/mason_clean_architecture.git","path":"bricks/features","ref":"4dbb76d5c80daa7b4614d536b3ee0594d4cf5f16"}}}}

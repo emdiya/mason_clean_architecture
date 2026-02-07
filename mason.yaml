@@ -1,5 +1,5 @@
 bricks:
   features:
-    path: bricks/features
-
-  
+    git:
+      url: "https://github.com/emdiya/mason_clean_architecture.git"
+      path: bricks/features
